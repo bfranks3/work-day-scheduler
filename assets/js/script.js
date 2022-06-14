@@ -19,16 +19,14 @@ function textColor() {
     })
 };
 
-var saveBtn = document.querySelector(".saveBtn")
-
-function saveText() {
-    var timeTask = $(this).siblings(".hour").text();
-    var tasks = $(this).siblings(".tasks").val();
-    console.log($(this));
-
-    localStorage.setItem(timeTask, tasks);
-};
-
+function clickHandler() {
+    var data = $(this).siblings("textarea");
+    var userInput = data.val();
+    var id = data.attr("id");
+    localStorage.setItem(id, userInput);
+  };
+  
+  $(".saveBtn").click(clickHandler)
 // when reloading the page content and info is pulled from storage
 function clickHandler() {
     var data = $(this).siblings("textarea");
@@ -38,7 +36,6 @@ function clickHandler() {
 };
 $(".saveBtn").click(clickHandler)
 
-// event listeners
-saveBtn.addEventListener("click", saveText)
+
 
 textColor();
