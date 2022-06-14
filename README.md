@@ -13,3 +13,4 @@ This is a program made to keep track of tasks and your agenda for the day.
 
 ## Webpage
 https://github.com/bfranks3/work-day-scheduler.git
+https://bfranks3.github.io/work-day-scheduler/
