@@ -4,3 +4,5 @@ var dateTime = function() {
     currentDay.textContent = time.format("dddd, MMMM Do YYYY, h:mm:ss a");
     setInterval(function() {dateTime(); }, 1000);
 }
+
+// text box needs to change color to match past current or future tense
