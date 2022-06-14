@@ -1,16 +1,13 @@
-var dateTime = function() {
-    var currentDay = document.getElementById("currentDay");
-    var time = moment(); 
-    currentDay.textContent = time.format("dddd, MMMM Do YYYY, h:mm:ss a");
-    setInterval(function() {dateTime(); }, 1000);
-}
+var m = moment().format('dddd, MMMM Do');
+
+var todaysDate = document.getElementById("currentDay").innerHTML = m.toString();
 
 // text box needs to change color to match past current or future tense
 function textColor() {
     var timeColor = moment().hours();
-    $('.time-block').each(function(){
+    $('.time-block').each(function () {
         var now = parseInt($(this).attr("id"));
-        if(now < timeColor) {
+        if (now < timeColor) {
             $(this).addClass("past");
         }
         else if (now === timeColor) {
@@ -38,8 +35,8 @@ function clickHandler() {
     var userInput = data.val();
     var id = data.attr("id");
     localStorage.setItem(id, userInput);
-  };
-  $(".saveBtn").click(clickHandler)
+};
+$(".saveBtn").click(clickHandler)
 
 // event listeners
 saveBtn.addEventListener("click", saveText)
